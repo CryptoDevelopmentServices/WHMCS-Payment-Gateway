@@ -3,15 +3,15 @@
 /**
  * CryptocurrencyCheckout WHMCS Payment Gateway Module
  *
- * This Payment Gateway module allows you to integrate the CryptocurrencyCheckout 
+ * This Payment Gateway module allows you to integrate the CryptocurrencyCheckout
  * Platform into your WHMCS Platform.
- * 
+ *
  * Author: CryptocurrencyCheckout
  * Author URI: https://cryptocurrencycheckout.com/
  * Version: 1.3.2
- * 
+ *
  * @see https://cryptocurrencycheckout.com/guides/whmcs
- * 
+ *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
@@ -504,6 +504,14 @@ function cryptocurrencycheckout_config()
             'Description' => 'Must Match CryptocurrencyCheckout Dashboard',
         ),
 
+        'cdsAddress' => array(
+            'FriendlyName' => 'CDS Address',
+            'Type' => 'text',
+            'Size' => '25',
+            'Default' => '',
+            'Description' => 'Must Match CryptocurrencyCheckout Dashboard',
+        ),
+
         'aliasAddress' => array(
             'FriendlyName' => 'ALIAS Address',
             'Type' => 'text',
@@ -693,6 +701,7 @@ function cryptocurrencycheckout_link($params)
     $ltcAddress = $params['ltcAddress'];
     $dashAddress = $params['dashAddress'];
     $sendAddress = $params['sendAddress'];
+    $cdsAddress = $params['cdsAddress'];
     $cdzcAddress = $params['cdzcAddress'];
     $arrrAddress = $params['arrrAddress'];
     $colxAddress = $params['colxAddress'];
@@ -780,6 +789,7 @@ function cryptocurrencycheckout_link($params)
     $postfields['CC_LTC_ADDRESS'] = $ltcAddress;
     $postfields['CC_DASH_ADDRESS'] = $dashAddress;
     $postfields['CC_SEND_ADDRESS'] = $sendAddress;
+    $postfields['CC_CDS_ADDRESS'] = $cdsAddress;
     $postfields['CC_CDZC_ADDRESS'] = $cdzcAddress;
     $postfields['CC_ARRR_ADDRESS'] = $arrrAddress;
     $postfields['CC_COLX_ADDRESS'] = $colxAddress;
